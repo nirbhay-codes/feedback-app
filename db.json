@@ -14,11 +14,6 @@
       "id": 3,
       "text": "This is feedback item 3 coming from the backend",
       "rating": 7
-    },
-    {
-      "text": "This is an updated item 3",
-      "rating": 3,
-      "id": "b03a"
     }
   ]
 }
