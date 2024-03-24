@@ -21,13 +21,16 @@ function FeedbackForm() {
     }
   }, [feedbackEdit])
 
-  const handleTextChange = (e) => {
-    const newText = e.target.value
-
-    if (newText === '') {
+  // ! By using destructuring { target: { value } }, the function directly extracts the 'value' property of the 'target' object from the event 'e' object i.e. e.target.value, which represents the current value of the input element.
+  /* NOTE: This should be checking input value not state as state won't be the updated value until the next render of the component
+   */
+  // 👈  get the value
+  const handleTextChange = ({ target: { value } }) => {
+    if (value === '') {
       setBtnDisabled(true)
       setMessage(null)
-    } else if (newText !== '' && newText.trim().length <= 10) {
+      // 👈 check for less than
+    } else if (value !== '' && value.trim().length <= 10) {
       setMessage('Text must be at least 10 characters')
       setBtnDisabled(true)
     } else {
@@ -35,7 +38,7 @@ function FeedbackForm() {
       setBtnDisabled(false)
     }
 
-    setText(e.target.value)
+    setText(value)
   }
 
   const handleSubmit = (e) => {
