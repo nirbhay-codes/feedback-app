@@ -16,9 +16,9 @@
       "rating": 7
     },
     {
-      "id": "b03a",
-      "text": "This is a test",
-      "rating": 6
+      "text": "This is an updated item 3",
+      "rating": 3,
+      "id": "b03a"
     }
   ]
 }
